@@ -6,9 +6,15 @@ public class IntToBin {
         System.out.println("Binary representation of " + x + " is: " + toBinary(x));
     }
 
-    /** Returns the binary representation of the given integer, as a string of 0's and 1's.  */
+    /**
+     * Returns the binary representation of the given integer, as a string of 0's
+     * and 1's.
+     */
     public static String toBinary(int x) {
-        //// Replace the following statement with your code
-        return "";
-    }    
- }
+        if (x<2){
+            return Integer.toString(x);
+        }
+
+        return toBinary(x / 2) + Integer.toString(x % 2);
+    }
+}
