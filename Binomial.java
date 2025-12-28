@@ -7,8 +7,7 @@ public class Binomial {
 		System.out.println(binomial1(Integer.parseInt(args[0]), Integer.parseInt(args[1])));
 
 		// Testing the optimized binomial implementation:
-		// System.out.println(binomial(Integer.parseInt(args[0]),
-		// Integer.parseInt(args[1])));
+		System.out.println(binomial(Integer.parseInt(args[0]), Integer.parseInt(args[1])));
 	}
 
 	// Computes the Binomial function, basic version.
@@ -23,11 +22,14 @@ public class Binomial {
 
 	// Computes the Binomial function, efficiently
 	public static int binomial(int n, int k) {
-		//// This function creates a 2D array, say memo, 
-		//// and then initializes all its elements to -1.
-		//// It then calls binomial(n, k, memo), which does all the heavy lifiting.
-		//// Replace the following statement with your code.
-		return 0;
+		int[][] memo = new int[n+1][k+1];
+		for (int i = 0; i < memo.length; i++) {
+			for (int j = 0; j < memo[i].length; j++) {
+				memo[i][j] = -1;
+			}
+		}
+
+		return binomial(n, k, memo);
 	}
 
 	private static int binomial(int n, int k, int[][] memo) {
