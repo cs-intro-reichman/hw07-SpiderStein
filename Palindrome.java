@@ -1,3 +1,9 @@
+/*
+Feedback: the second if statement isnt needed
+we can switch the conditions here - (s.charAt(0) == s.charAt(s.length() - 1)) && isPalindrome(s.substring(1, s.length() - 1)) && (s.charAt(0) == s.charAt(s.length() - 1))
+Since once we find false, we can return false
+*/
+
 /** Checks if a given string is a palindrome. */
 public class Palindrome {
 
@@ -16,4 +22,5 @@ public class Palindrome {
 
 		return isPalindrome(s.substring(1, s.length() - 1)) && (s.charAt(0) == s.charAt(s.length() - 1));
 	}
+
 }
